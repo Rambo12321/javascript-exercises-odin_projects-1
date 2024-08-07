@@ -1,25 +1,28 @@
-function removeFromArray(a,...args) {
-    let arr = Array.from(args);
+const removeFromArray = function(arr, ...nums) {
 
-    for(let i=0;i<args.length;i++)
+    if(arr.length == 0)
     {
-        let itr = a.indexOf(arr[i]);
-        
-        if(itr===-1)
-        {
-            continue;
-        }
-
-        if (arr[i]===a[itr])
-            {
-                a.splice(itr,1);
-            }
+        return [];
+    }
+    else if(nums.length == 0)
+    {
+        return arr;
     }
 
-    console.log(a);
+    for(num of nums)
+    {
+        for(i in arr)
+        {
+            if(arr[i]===num)
+            {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+    }
 
-    return a;
-    
+    return arr;
+
 };
 
 // Do not edit below this line

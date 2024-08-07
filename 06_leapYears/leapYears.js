@@ -1,18 +1,12 @@
 const leapYears = function(a) 
 {
-    if(a%4==0)
+    if(a%4 == 0 && a%100 == 0 && a%400 == 0)
     {
-        if(a%100==0)
-        {
-            if(a%400==0 && a%100==0)
-            {
-            return true;
-            }
-        }
-        else
-        {
-            return true;
-        }
+        return true;
+    }
+    else if(a%100 != 0 && a%4 ==0)
+    {
+        return true;
     }
     return false;
 };

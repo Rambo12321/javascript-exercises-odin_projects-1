@@ -1,39 +1,38 @@
 const sumAll = function(a,b)   //sums the given numbers
 {
-    if(a<0 || b<0 || check(a) || check(b))
+    if(typeof a != 'number' || typeof b != 'number' || a<0 || b<0)
     {
-        return 'ERROR';
+        return "ERROR";
     }
 
-    let sum=0;
+    let small;
+    let big;
 
-    if(a<b)
+    sum=0;
+
+    if(a>b)
     {
-        for(let i=a;i<=b;i++)
-        {
-            sum+=i;
-        }
-        return sum;
+        small = b;
+        big = a;
     }
-
     else
     {
-        for(let i=a;i>=b;i--)
-        {
-            sum+=i;
-        }
-        return sum;
+        small = a;
+        big = b;
     }
-    
-};
 
-function check(a)   //check if Integer value is provided or not
-{
-    if(Number.isInteger(a))
+    sum = calcSum(small,big);
+
+    function calcSum(small, big)
     {
-        return false;
+        add = 0;
+        for (let i = small; i <= big; i++) {
+            add += i;
+        }
+        return add;
     }
-    return true;
+
+    return sum;
 }
 
 // Do not edit below this line

@@ -1,22 +1,18 @@
-const reverseString = (a) => {
+const reverseString = function(str) {
 
-    if(a=='')
+    if(str.length == 0)
     {
-        return '';
+        return "";
     }
 
-    let itr=1;
-    let str = '';
+    let ansStr = "";
 
-
-    while(itr<=a.length)
+    for(i=str.length-1;i>=0;i--)
     {
-        str+=a.charAt(a.length-itr);
-        itr++;
+        ansStr += str.charAt(i);
     }
 
-    return str;
-
+    return ansStr;
 };
 
 // Do not edit below this line
